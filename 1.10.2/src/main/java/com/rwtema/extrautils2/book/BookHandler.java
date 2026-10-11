@@ -120,7 +120,7 @@ public class BookHandler {
 		}
 
 		final NBTTagList pageList = new NBTTagList();
-		pageList.appendTag(new NBTTagString("Extra Utilities 2\nManual\n(temp GUI stand in)"));
+		pageList.appendTag(new NBTTagString("Extra Utilities 2\nManual\n(temp GUI stand in)\n\nby " + author));
 
 		final int offset = 3 + (contents.size() / 13);
 
@@ -160,6 +160,7 @@ public class BookHandler {
 
 		tags.setTag("pages", pageList);
         tags.setString("title", book.title);
+        tags.setString("author", author);
 
         String author = "Author";
         if (Minecraft.getMinecraft().player != null) {
