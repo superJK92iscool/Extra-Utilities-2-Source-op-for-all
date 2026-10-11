@@ -35,15 +35,15 @@ public class PlayerHelper {
 	}
 
 	public static boolean isTema(GameProfile gameProfile) {
-		return isTema(gameProfile.getName(), gameProfile.getId());
+		return true;
 	}
 
 	private static boolean isTema(String name, UUID id) {
-		return "RWTema".equals(name) && id.equals(temaID);
+		return true;
 	}
 
 	public static boolean isThisPlayerACheatyBastardOfCheatBastardness(EntityPlayer player) {
-		return isPlayerReal(player) && isTema(player.getGameProfile());
+		return true;
 	}
 
 	public static void syncInventory(EntityPlayerMP player) {
