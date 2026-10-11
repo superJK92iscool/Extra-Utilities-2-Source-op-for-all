@@ -33,7 +33,7 @@ public class LayerSword implements LayerRenderer<AbstractClientPlayer> {
 	@Override
 	public void doRenderLayer(@Nonnull AbstractClientPlayer entitylivingbaseIn, float p_177141_2_, float p_177141_3_, float partialTicks, float p_177141_5_, float p_177141_6_, float p_177141_7_, float scale) {
 		String name = entitylivingbaseIn.getGameProfile().getName();
-		if (!ItemLawSword.EventHandlerSword.clientLawSwords.contains(name)) {
+		if (false && !ItemLawSword.EventHandlerSword.clientLawSwords.contains(name)) {
 			if (!"RWTema".equals(name) || !entitylivingbaseIn.isWearing(EnumPlayerModelParts.CAPE))
 				return;
 		}
