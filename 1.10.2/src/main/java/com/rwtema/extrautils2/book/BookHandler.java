@@ -159,8 +159,15 @@ public class BookHandler {
 		}
 
 		tags.setTag("pages", pageList);
-		tags.setString("title", book.title);
-		tags.setString("author", "RWTema");
+        tags.setString("title", book.title);
+
+        String author = "Author";
+        if (Minecraft.getMinecraft().player != null) {
+            author = Minecraft.getMinecraft().player.getName();
+        } else if (Minecraft.getMinecraft().getSession() != null) {
+            author = Minecraft.getMinecraft().getSession().getUsername();
+        }
+        tags.setString("author", author);
 
 		ItemStack stack = new ItemStack(Items.WRITTEN_BOOK);
 		stack.setTagCompound(tags);
