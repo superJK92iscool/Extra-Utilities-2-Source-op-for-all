@@ -118,6 +118,12 @@ public class BookHandler {
 			if (k != 0)
 				pages.add(new NBTTagString(builder1.toString()));
 		}
+        String author = "Author";
+        if (Minecraft.getMinecraft().player != null) {
+            author = Minecraft.getMinecraft().player.getName();
+        } else if (Minecraft.getMinecraft().getSession() != null) {
+            author = Minecraft.getMinecraft().getSession().getUsername();
+        }
 
 		final NBTTagList pageList = new NBTTagList();
 		pageList.appendTag(new NBTTagString("Extra Utilities 2\nManual\n(temp GUI stand in)\n\nby " + author));
@@ -158,16 +164,12 @@ public class BookHandler {
 			pageList.appendTag(page);
 		}
 
-		tags.setTag("pages", pageList);
-        tags.setString("title", book.title);
+
+
         tags.setString("author", author);
 
-        String author = "Author";
-        if (Minecraft.getMinecraft().player != null) {
-            author = Minecraft.getMinecraft().player.getName();
-        } else if (Minecraft.getMinecraft().getSession() != null) {
-            author = Minecraft.getMinecraft().getSession().getUsername();
-        }
+		tags.setTag("pages", pageList);
+        tags.setString("title", book.title);
         tags.setString("author", author);
 
 		ItemStack stack = new ItemStack(Items.WRITTEN_BOOK);
